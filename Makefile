@@ -1,7 +1,7 @@
 IMAGE=dreitier/interpolator
 EXECUTABLE=interpolator
 
-all: build 
+all: build
 
 build:
 	go mod download

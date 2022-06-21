@@ -1,33 +1,38 @@
-### Tool to interpolate variables in text files
+# interpolator
+Interpolate variables in text files.
 
-The tool evaluates expressions like _${VAR}_ and tries to replace them with the value of the corresponding environment variable _VAR_.
+## Description
+
+*interpolator* evaluates expressions like `${VAR}` and tries to replace them with the value of the corresponding environment variable `VAR`.
 If none is found, the expression is omitted.
 
-## Usage:
-```
+## Getting started
+
+### Usage
+```bash
 interpolator $source_file ($target_file)
 ```
 
 If no target file is specified, an in-place edit will be performed.
 
-## Build
-The project is built using the Makefile:
- 
- ```bash
- make
- ```
- 
-The image can be either pushed to the registry via
+### Docker container
+You can find ready-to-run Docker containers at [dreitier/interpolator](https://hub.docker.com/repository/docker/dreitier/interpolator).
+
+## Development
+### Creating new releases
+A new release (artifact & Docker container) is automatically created when a new Git tag is pushed:
 
 ```bash
-# execute `docker login` before
-TAG=1.0.0 make docker-push
+git tag x.y.z
+git push origin x.y.z
 ```
 
-or in a CI pipeline with
+## Support
+This software is provided as-is. You can open an issue in GitHub's issue tracker at any time. But we can't promise to get it fixed in the near future.
+If you need professionally support, consulting or a dedicated feature, please get in contact with us through our [website](https://dreitier.com).
 
-```bash
-docker build . -t interpolator:${TAG}
-```
+## Contribution
+Feel free to provide a pull request.
 
-The project can be cleaned via ```make clean```.
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
