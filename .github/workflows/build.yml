@@ -16,7 +16,8 @@ jobs:
       uses: docker/setup-buildx-action@v2
 
     - name: Build application in Docker builder stage
-      uses: shrink/actions-docker-extract@v1
+      uses: docker/build-push-action@v3
       with:
+        context: .
         push: false
         target: builder
